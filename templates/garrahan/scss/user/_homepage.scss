@@ -1,0 +1,51 @@
+.site-grid {
+  padding: 0;
+}
+
+.view-featured .site-grid .full-width.component,
+.comunidad {
+  background: $violeta4;
+}
+
+.recursos {
+  background: $violeta;
+
+  @include media-breakpoint-down(lg) {
+    padding: 50px 0;
+  }
+}
+
+/* main component */
+.view-featured {
+  .component .container-component main {
+    margin-top: 0;
+  }
+
+  .blog-item {
+    background: #fff;
+
+    @include media-breakpoint-down(lg) {
+      margin: $garrahan-grid-gutter;
+    }
+
+    ul.fields-container {
+      display: none;
+    }
+
+    .item-image {
+      margin    : 0;
+      text-align: center;
+      /*
+      ver si en móvil las imágenes tienen aire o no
+      @include media-breakpoint-down(lg) {
+        margin  : $garrahan-grid-gutter;
+        padding : $garrahan-grid-gutter;
+      }
+      */
+    }
+
+    .item-content {
+      @include itemContent;
+    }
+  }
+}

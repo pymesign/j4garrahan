@@ -1,0 +1,634 @@
+/* Títulos */
+.site-grid [class*=' container-titulo'],
+.site-grid [class^='container-titulo'] {
+  height: auto;
+  align-items: center;
+
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+}
+
+// los títulos ocupan todo el ancho de pantalla
+.titulo {
+  width: 100%;
+  text-align: center;
+  padding: 5em 0 4em 0;
+
+  >h3 {
+    color: $violeta;
+    font-weight: 600;
+    font-size: 2rem;
+    padding-bottom: $garrahan-grid-gutter;
+    margin-bottom: 0;
+  }
+
+  .custom p {
+    margin-bottom: 0;
+  }
+}
+
+/* Cards */
+.card .card-body .card-header {
+  font-family: 'Encode Sans', sans-serif;
+}
+
+/*** Sección Header ***/
+
+/* Módulo topbar */
+.topbar:not(.search) {
+  background: $gris3;
+  color: $gris2;
+
+  .mod-menu .metismenu-item {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+
+    a {
+      color: $gris2;
+    }
+  }
+
+  &.redes span {
+    padding-right: $garrahan-grid-gutter;
+    color: $gris2;
+  }
+}
+
+/* Módulo search */
+.topbar .mod-finder__search {
+  justify-content: flex-end;
+
+  button.btn.btn-primary {
+    background: inherit;
+    border: none;
+    padding: 0;
+
+    span.icon-search.icon-white {
+      color: $violeta;
+    }
+  }
+
+  input {
+    background-color: inherit;
+    border: 0;
+    text-align: center;
+    color: $violeta;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    &::placeholder {
+      color: $violeta;
+    }
+  }
+}
+
+/*** Accesos destacados homepage ***/
+
+/* Módulo top-a */
+.site-grid .grid-child.container-top-a {
+  column-gap: 0;
+}
+
+.top-a.card {
+  background: $violeta;
+  padding: $garrahan-grid-gutter;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+
+  .card-body {
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 200;
+    line-height: normal;
+
+    .card-header {
+      background: none;
+      border-bottom: none;
+      font-family: 'Encode Sans', sans-serif;
+      font-weight: 500;
+      padding: $garrahan-grid-gutter 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    p {
+      font-weight: 400;
+    }
+  }
+}
+
+/*** Sección Alta Complejidad ***/
+
+/* Módulo titulo-top-b */
+.container-titulo-top-b {
+  grid-area: titulo-top-b;
+}
+
+/* Módulo top-b */
+.top-b.card {
+  position: relative;
+  border: none;
+  margin-top: 0;
+
+  .card-header {
+    background: none;
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-weight: 400;
+    bottom: 0;
+    padding: $garrahan-grid-gutter;
+    border-bottom: 0;
+  }
+
+  .card-body {
+    padding: 0;
+
+    .mod-custom.custom {
+      width: auto;
+      height: 249px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      a {
+        display: block;
+        position: relative;
+        z-index: 1;
+        height: 240px;
+        font-size: 0;
+      }
+    }
+  }
+}
+
+/*** Sección Componente Principal - Ultimas Noticias ***/
+
+/* Módulo titulo-comp */
+.titulo-comp {
+  background: $violeta4;
+
+  .mod-custom.custom {
+    padding: 0 $garrahan-grid-gutter;
+  }
+
+  //Forzamos padding porque al no ser grid-child no podemos hacerlo ubicar en la columna 3
+  @include media-breakpoint-up(lg) {
+    .mod-custom.custom {
+      padding: 0 360px;
+    }
+  }
+}
+
+.container-titulo-comp {
+  grid-area: titulo-comp;
+
+  h3 {
+    padding-bottom: 0;
+  }
+}
+
+/*** Sección Recursos ***/
+
+/* Modulo bottom-a */
+
+.bottom-a.card {
+  background: none;
+  border: none;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+      min-height: 266px; //el doble de la altura del ícono
+    }
+
+    justify-content: center;
+
+    .card-header {
+      border: none;
+      color: #fff;
+      font-weight: 400;
+      background-color: inherit;
+
+      &:after {
+        content: url(../images/angle-right-dark.png);
+        padding-left: $garrahan-grid-gutter;
+      }
+    }
+
+    a {
+      display: block;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      width: 100%;
+      left: 0;
+      font-size: 0;
+    }
+  }
+}
+
+/*** Sección Garrahan y la Comunidad ***/
+
+/* Modulo titulo-bottom-b */
+.container-titulo-bottom-b {
+  grid-area: titulo-bot-b;
+
+  h3 {
+    padding-bottom: 0;
+  }
+
+  .mod-custom.custom {
+    padding: 0 $garrahan-grid-gutter;
+  }
+
+  //Forzamos padding porque al no ser grid-child no podemos hacerlo ubicar en la columna 3
+  @include media-breakpoint-up(lg) {
+    .mod-custom.custom {
+      padding: 0 360px;
+    }
+  }
+}
+
+/* Módulo bottom-b */
+.bottom-b.card {
+  position: relative;
+  border: none;
+  margin-top: 0;
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .card-header {
+    background: none;
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    bottom: 0;
+    font-weight: 400;
+    padding: $garrahan-grid-gutter;
+  }
+
+  .card-body {
+    padding: 0;
+
+    .mod-custom.custom {
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: auto;
+      height: 232px;
+
+      a {
+        display: block;
+        position: relative;
+        z-index: 1;
+        height: 240px;
+        font-size: 0;
+      }
+    }
+  }
+
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+/* Modulo bottom-c */
+
+.bottom-c.card {
+  background: none;
+  border: none;
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 1em;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  .card-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+
+    .card-header {
+      border: none;
+      background: none;
+      font-size: 1.3em;
+      font-weight: 600;
+      color: $violeta;
+      padding: $garrahan-grid-gutter;
+    }
+
+    p {
+      padding: 0 1.5rem $garrahan-grid-gutter;
+    }
+  }
+}
+
+/*** Sección Contadores ***/
+
+.contadores {
+  background-image: url(../images/bgr-contadores.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include media-breakpoint-down(lg) {
+    padding: 50px 0;
+  }
+
+  height: auto;
+
+  @include media-breakpoint-up(xl) {
+    height: 600px;
+  }
+
+  color: #fff;
+
+  .container-bottom-d {
+    height: 100%;
+    align-items: center;
+
+    .bottom-d {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 50px;
+      }
+
+      .camas .wrapper {
+        background-image: url(../images/ico_camas.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+      }
+
+      .consultas .wrapper {
+        background-image: url(../images/ico_consultas.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+      }
+
+      .egresos .wrapper {
+        background-image: url(../images/ico_egresos.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+      }
+
+      .cirugias .wrapper {
+        background-image: url(../images/ico_cirugias.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+      }
+
+      .inner span.purecounter {
+        font-size: 48px;
+        font-weight: bold;
+        font-weight: 600;
+        display: block;
+        padding: 0 $garrahan-grid-gutter;
+      }
+
+      .inner span.dato {
+        font-size: 24px;
+        font-weight: normal;
+      }
+
+      >div {
+        gap: $garrahan-grid-gutter * 3;
+      }
+    }
+  }
+}
+
+/*** Sección Campus virtual ***/
+
+/* Modulo titulo-bottom-e */
+.container-titulo-bottom-e {
+  grid-area: titulo-bot-e;
+
+  h3 {
+    padding-bottom: 0;
+  }
+}
+
+.container-bottom-e .bottom-e.card:first-child .card-body {
+  padding: 0;
+
+  .mod-custom.custom {
+    height: 365px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.container-bottom-e .bottom-e.card {
+  border: none;
+  margin-top: 0;
+
+  .card-body {
+    padding: 0 1rem;
+  }
+}
+
+/*** Sección Logos ***/
+
+/* modulo logos */
+.container-logos {
+  margin: 0 auto;
+
+  .logos.card:last-of-type {
+    border-right: none;
+  }
+}
+
+.logos {
+  background: $violeta4;
+  border: none;
+  margin: 0;
+
+  .card-body {
+    padding: 0;
+  }
+
+  .card-body>div {
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      max-width: 327px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .card:first-child>.card-body {
+      border-right: 2px solid $violeta;
+    }
+  }
+
+  .ciudad,
+  .ministerio {
+    padding: ($garrahan-grid-gutter * 3) 0;
+  }
+}
+
+/*** Footer ***/
+.footer {
+  background-color: $violeta;
+  background-image: inherit;
+  padding: $garrahan-grid-gutter;
+  flex: 1 1 0;
+
+  h5 {
+    font-weight: 600;
+
+    &:after {
+      content: url(../images/angle-right-dark.png);
+      padding-left: $garrahan-grid-gutter;
+      vertical-align: middle;
+    }
+  }
+
+  .custom [class*='fab'] {
+    padding-top: $garrahan-grid-gutter;
+    padding-right: $garrahan-grid-gutter;
+  }
+
+  .disclaimer {
+    color: #49496b;
+  }
+}
+
+/*** Noticias relacionadas ***/
+.logos .card.relacionadas {
+  margin-top: 0;
+  padding: 0;
+
+  .card-header {
+    background-color: inherit;
+    border: none;
+    padding: 2.5em 0 2em 0;
+    text-align: center;
+  }
+
+  .card-body {
+    border-right: none;
+
+    figure.item-image img {
+      max-width: 100%;
+    }
+
+    .item-content {
+      text-align: left;
+    }
+  }
+}
+
+/*** Header servicios ***/
+.mod-custom.servicio {
+  padding: $garrahan-grid-gutter;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 30%;
+  min-height: 200px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0;
+
+    .wrapper {
+      width: 80%;
+      position: relative;
+      left: -3%;
+      background: $violeta;
+      border-right: 50px solid $rosa;
+      transform: skew(-15deg);
+      height: 300px;
+      transform: skew(-15deg);
+      -webkit-transform: skew(-15deg);
+      -moz-transform: skew(-15deg);
+      -ms-transform: skew(-15deg);
+      -o-transform: skew(-15deg);
+    }
+
+    .content {
+      position: relative;
+      left: 17%;
+      color: #fff;
+      height: 100%;
+      transform: skew(15deg);
+      -webkit-transform: skew(15deg);
+      -moz-transform: skew(15deg);
+      -ms-transform: skew(15deg);
+      -o-transform: skew(15deg);
+    }
+  }
+}
+
+/*** Breadcrumbs ***/
+nav.mod-breadcrumbs__wrapper {
+  background: $violeta;
+
+  ol.breadcrumb {
+    background-color: inherit;
+
+    li,
+    li>a {
+      color: #fff;
+    }
+  }
+}
+
+/*** Paginador ***/
+.pagination .page-link,
+.page-item.disabled .page-link {
+  color: $violeta;
+}
+
+.page-item.active .page-link {
+  background-color: $violeta;
+}

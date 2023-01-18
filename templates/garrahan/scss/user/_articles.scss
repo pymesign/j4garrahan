@@ -1,0 +1,384 @@
+// articulos item-page
+.com-content-article.item-page:not(.servicio, .noticias) {
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: $garrahan-grid-gutter 0;
+  }
+
+  .page-header {
+    margin-bottom: $garrahan-grid-gutter;
+    background: $rosa;
+
+    h1 {
+      color: #fff;
+      padding: $garrahan-grid-gutter 0;
+      text-align: right;
+    }
+  }
+
+  .volanta+.page-header {
+    margin-top: $garrahan-grid-gutter;
+  }
+
+  figure.item-image img {
+    margin: $garrahan-grid-gutter 0;
+    width: 100%;
+  }
+
+  ul.fields-container {
+    padding-left: 0;
+
+    li.field-entry.volanta {
+      margin: $garrahan-grid-gutter 0;
+      list-style-type: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .com-content-article__body {
+      /*width: 50%;*/
+      margin: 0 auto;
+      padding: ($garrahan-grid-gutter * 2) ($garrahan-grid-gutter * 4) 0 ($garrahan-grid-gutter * 4);
+    }
+  }
+}
+
+// articulos tipo servicios (colocar "servicio" en la clase del menu y elegir presentación "servicio")
+@include media-breakpoint-up(lg) {
+  .servicio {
+    .site-grid .grid-child.container-component {
+      grid-column-start: full-start;
+      grid-column-end: full-end;
+
+      .com-content-article__body {
+        width: 100%;
+      }
+    }
+
+    .container-sidebar-left {
+      margin-top: -50px;
+      background: $gris3;
+      box-shadow: $garrahan-box-shadow;
+      border-top: 5px solid $rosa;
+      z-index: 1;
+    }
+
+    .item-page.servicio {
+      width: 100%;
+
+      .page-header {
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 30%;
+
+        .wrapper {
+          width: 80%;
+          position: relative;
+          left: -3%;
+          background: $violeta;
+          border-right: 50px solid $rosa;
+          transform: skew(-15deg);
+          height: 300px;
+          transform: skew(-15deg);
+          -webkit-transform: skew(-15deg);
+          -moz-transform: skew(-15deg);
+          -ms-transform: skew(-15deg);
+          -o-transform: skew(-15deg);
+
+          .text {
+            position: relative;
+            left: 17%;
+            color: #fff;
+            height: 100%;
+            transform: skew(15deg);
+            -webkit-transform: skew(15deg);
+            -moz-transform: skew(15deg);
+            -ms-transform: skew(15deg);
+            -o-transform: skew(15deg);
+          }
+        }
+
+        h1 {
+          background: inherit;
+          color: inherit;
+          text-align: inherit;
+          padding: 0;
+        }
+      }
+
+      .com-content-article__body {
+        padding: 0;
+
+        .item-text {
+          padding: $garrahan-grid-gutter *4;
+        }
+      }
+    }
+  }
+}
+
+.servicio .sidebar-left {
+  h3 {
+    padding: $garrahan-grid-gutter;
+  }
+
+  ul {
+    width: 100%;
+
+    li {
+      border-bottom: 1px solid $gris2;
+      padding: $garrahan-grid-gutter (
+        $garrahan-grid-gutter * 3
+      );
+
+    &:hover,
+    &.active {
+      background: $gris2;
+      transition-timing-function: ease;
+      transition-duration: 0.35s;
+      transition-property: color, background-color, height, visibility;
+
+      a {
+        color: $blanco;
+      }
+    }
+
+    a {
+      font-weight: bold;
+      color: $violeta;
+    }
+  }
+}
+}
+
+// articulo presentación "base"
+.view-article.no-layout .site-grid .grid-child.container-component {
+  grid-column-start: full-start;
+  grid-column-end: full-end;
+
+  main .com-content-article.item-page.base {
+    width: 100%;
+
+    .page-header {
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: 30%;
+
+      .wrapper {
+        width: 80%;
+        position: relative;
+        left: -3%;
+        background: $violeta;
+        border-right: 50px solid $rosa;
+        transform: skew(-15deg);
+        height: 200px;
+        transform: skew(-15deg);
+        -webkit-transform: skew(-15deg);
+        -moz-transform: skew(-15deg);
+        -ms-transform: skew(-15deg);
+        -o-transform: skew(-15deg);
+
+        .text {
+          position: relative;
+          left: 17%;
+          color: #fff;
+          height: 100%;
+          transform: skew(15deg);
+          -webkit-transform: skew(15deg);
+          -moz-transform: skew(15deg);
+          -ms-transform: skew(15deg);
+          -o-transform: skew(15deg);
+        }
+      }
+
+      h1 {
+        background: inherit;
+        color: inherit;
+        text-align: inherit;
+        padding: 0;
+      }
+    }
+
+    .com-content-article__body {
+      padding: $garrahan-grid-gutter;
+
+      @include media-breakpoint-up(lg) {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .item-text {
+        padding: $garrahan-grid-gutter *4;
+      }
+    }
+  }
+}
+
+// articulos Noticias
+.item-page.noticias {
+  @include media-breakpoint-up(lg) {
+    width: 66%;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    grid-column: main-start / main-end;
+
+    h1 {
+      background: inherit;
+      color: inherit;
+      text-align: inherit;
+      padding: 0;
+    }
+  }
+
+  figure.item-image img {
+    width: 100%;
+  }
+
+  .com-content-article__body {
+    width: auto;
+  }
+}
+
+// organigrama
+.item-page.autoridades .com-content-article__body {
+  width: 80%;
+}
+
+// Turnos
+
+.item-page.turnos .item-text {
+  .page-header {
+    margin-top: 20px;
+  }
+
+  .inner-header {
+    text-align: left;
+    padding-left: 40px;
+
+    h1 {
+      opacity: inherit;
+      text-transform: none;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    &::after {
+      content: url(../images/line.png);
+    }
+  }
+
+  p {
+    padding-top: 10px;
+  }
+
+  .row.turnos {
+    .span12 p>strong {
+      font-size: 18px;
+    }
+
+    a.btn.turnos {
+      color: #681777;
+      font-weight: bold;
+      background: rgba(104, 23, 119, 0.1);
+      border: none;
+      background-image: url(../images/flechita-turnos.png);
+      background-repeat: no-repeat;
+      background-position: left;
+      text-indent: 55px;
+      padding: 30px;
+      margin: 30px 0;
+    }
+
+    a.btn.turnos:hover {
+      background: rgba(104, 23, 119, 0.2);
+      background-image: url(../images/flechita-turnos.png);
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+  }
+
+  h2 {
+    background: $violeta;
+    color: #fff;
+    text-transform: none;
+    display: block;
+    padding: 15px 20px;
+    margin-top: 30px;
+  }
+
+  ul {
+    margin-left: 17px;
+    margin-top: 10px;
+
+    li {
+      list-style-image: url(../images/square-bullet.png);
+      padding: 8px 0;
+    }
+  }
+
+  .turnos.practicas {
+    padding: 20px 0 50px 0;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .laboratorio {
+      background: url(../images/turnos-laboratorio.png) no-repeat left center;
+      background-size: 110px;
+      text-align: left;
+      padding: 0 0 0 130px;
+    }
+
+    .imagenes {
+      background: url(../images/turnos-imagenes.png) no-repeat left center;
+      background-size: 110px;
+      text-align: left;
+      padding: 0 0 0 130px;
+    }
+
+    .resonancia {
+      background: url(../images/turnos-resonancia.png) no-repeat left center;
+      background-size: 110px;
+      text-align: left;
+      padding: 0 0 0 130px;
+    }
+  }
+
+  .consulta {
+    margin-bottom: 10px;
+
+    .col span {
+      background-color: #50b6af;
+      display: block;
+      line-height: 60px;
+      padding: 0 40px;
+      font-size: 18px;
+      text-indent: 40px;
+      color: #fff;
+      text-align: center;
+
+      a {
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+
+    .col span::before {
+      content: url(../images/turnos-email.png);
+      top: 12px;
+      position: relative;
+      padding-right: 10px;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* fin turnos */

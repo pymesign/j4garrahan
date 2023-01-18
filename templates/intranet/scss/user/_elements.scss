@@ -1,0 +1,62 @@
+.btn.white {
+  border: none;
+  text-transform: uppercase;
+  color: $violeta;
+  background: #fff;
+  padding: $garrahan-grid-gutter;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.btn.violeta {
+  text-transform: uppercase;
+  color: #fff;
+  background: $violeta;
+  padding: $garrahan-grid-gutter;
+  &:after {
+    content: url(../images/angle-right-white.png);
+    padding-left: $garrahan-grid-gutter;
+  }
+}
+
+.btn-info {
+  background-color: $azul;
+  border: none;
+}
+
+//colores
+.violeta {
+  background: $violeta;
+}
+
+span.icon-chevron-right {
+  padding-left: $garrahan-grid-gutter / 2;
+}
+
+//Blockquotes
+blockquote {
+  padding: $garrahan-grid-gutter;
+  border-top: 1px solid $gris1;
+  border-bottom: 1px solid $gris1;
+  font-size: 1.4em;
+  font-style: italic;
+  margin: 2em 0;
+  color: $violeta;
+  p {
+    position: relative;
+  }
+  > p:first-child:before {
+    content: '❝';
+    font-size: 2rem;
+    position: absolute;
+    left: -30px;
+    top: -5px;
+  }
+}
+
+//Sliders
+.jwts_toggleControlContainer {
+  margin: $garrahan-grid-gutter 0;
+}

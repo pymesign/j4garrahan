@@ -1,0 +1,26 @@
+.events .event {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        span.titulo {
+            padding: 0;
+        }
+    }
+
+    .organiza {
+        padding: 1rem 0;
+    }
+
+    .more {
+        border-top: 1px solid $gris2;
+        padding-top: 1rem;
+        margin-top: 1rem;
+    }
+}

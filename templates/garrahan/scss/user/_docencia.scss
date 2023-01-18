@@ -1,0 +1,58 @@
+/* nueva agenda docencia */
+
+#sidebar-left .moduletable.agenda .agenda {
+    border-bottom: inherit;
+}
+
+.agenda .evento {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0px;
+}
+
+.agenda .evento .transversales-fecha {
+    padding: 0;
+    margin: 0;
+}
+
+.agenda .evento .transversales-titulo {
+    width: 100%;
+    margin: 0px 10px 6px 10px;
+    line-height: normal;
+    font-size: 11px;
+    text-transform: uppercase;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.agenda span.mod_events_latest_date {
+    background: #a6a8aa;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 35px;
+    padding: 3px;
+    text-align: center;
+    width: 35px;
+    line-height: normal;
+}
+
+.agenda span.mod_events_latest_date {
+    margin-left: 15px;
+}
+
+.agenda .mod_events_latest_content a {
+    text-transform: none;
+    color: #000000 !important;
+    padding-right: 10px;
+}

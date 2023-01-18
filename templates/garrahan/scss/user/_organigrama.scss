@@ -1,0 +1,30 @@
+.organigrama {
+  display: grid;
+  grid-gap: $garrahan-grid-gutter;
+  grid-template-columns: repeat(8, 1fr);
+  .card-img-top {
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+h3 {
+  grid-column: 1 / 9;
+}
+
+.presidente {
+  grid-column: 1 / 9;
+}
+
+.titular {
+  grid-column: span 2;
+  .card {
+    padding-top: $garrahan-grid-gutter;
+  }
+}
+.secretario {
+  grid-column: span 2;
+  .card {
+    padding-top: $garrahan-grid-gutter;
+    align-items: center;
+  }
+}

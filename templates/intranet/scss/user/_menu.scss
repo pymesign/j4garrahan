@@ -1,0 +1,27 @@
+/* Menú principal */
+header.container-header .navbar-brand {
+  display: none;
+}
+nav.navbar {
+  place-content: flex-end;
+  align-self: center;
+  .mod-menu > .metismenu-item:last-of-type {
+    padding-right: 0;
+  }
+  .mod-menu .mm-toggler:after {
+    font-family: 'FontAwesome';
+    font-size: 1rem;
+    font-weight: normal;
+    content: '\f107';
+    color: $rosa;
+    padding-left: 5px;
+    border: inherit;
+    width: auto;
+    height: auto;
+  }
+  ul.mod-menu > li > a,
+  ul.mod-menu li ul li a {
+    color: $violeta;
+    font-weight: 500;
+  }
+}

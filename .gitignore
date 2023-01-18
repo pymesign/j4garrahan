@@ -1,0 +1,23 @@
+administrator/
+api/
+cache/
+cli/
+components/
+includes/
+libraries/
+media/
+modules/
+plugins/
+templates/cassiopeia
+tmp/
+configuration - copia.php
+configuration.php
+templates/garrahan/index copy.php
+.vscode/sftp.json
+templates/garrahan/index copy 2.php
+templates/garrahan/prepros.config
+codigo/
+logs/
+templates/intranet/prepros.config
+templates/intranet/css/template.min.css
+templates/garrahan/prepros.config

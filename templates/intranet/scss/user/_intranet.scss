@@ -1,0 +1,303 @@
+.site-grid {
+  padding-top: $garrahan-grid-gutter;
+
+  .item-content .content-wrap p {
+    display: none;
+  }
+
+  .container-titulo-comp {
+    padding: $garrahan-grid-gutter;
+
+    .titulo-comp.no-card {
+      background: url('../images/dash-title.png') repeat $gris3;
+      width     : 100%;
+
+      h3 {
+        display      : inline-block;
+        background   : $gris3;
+        margin       : 0;
+        padding-right: $garrahan-grid-gutter;
+        color        : $gris2;
+      }
+    }
+  }
+}
+
+.blog-items.items-sidebar {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+
+  .blog-item {
+    flex-direction: row;
+  }
+
+  .volanta {
+    display: none;
+  }
+}
+
+.com-content-category-blog__items.blog-items.items-leading .com-content-category-blog__item.blog-item:first-of-type {
+  position: relative;
+
+  .item-content {
+    position: absolute;
+    bottom  : $garrahan-grid-gutter * 2;
+    left    : $garrahan-grid-gutter * 2;
+
+    .tags .btn-info {
+      text-transform       : uppercase;
+      border-radius        : 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius   : 0;
+      -ms-border-radius    : 0;
+      -o-border-radius     : 0;
+    }
+
+    .item-title {
+      font-size  : 2rem;
+      width      : 75%;
+      line-height: normal;
+
+      a {
+        color      : #fff;
+        text-shadow: 1px 1px 1px #000;
+      }
+    }
+  }
+}
+
+.items-leading .com-content-category-blog__item.blog-item:nth-child(2) .item-content,
+.items-leading .com-content-category-blog__item.blog-item:nth-child(3) .item-content {
+  background: $azul2;
+  padding   : $garrahan-grid-gutter * 2;
+
+  .tags {
+    margin-bottom: 0;
+
+    .btn-info {
+      background-color: inherit;
+      padding         : 0;
+      text-transform  : uppercase;
+    }
+  }
+
+  .page-header h2 a {
+    color: #fff;
+  }
+}
+
+.items-leading .com-content-category-blog__item.blog-item:nth-child(2) figure.item-image,
+.items-leading .com-content-category-blog__item.blog-item:nth-child(3) figure.item-image {
+  margin: 0;
+}
+
+.blog-items.items-sidebar .blog-item {
+  gap: $garrahan-grid-gutter;
+
+  figure {
+    margin-bottom: 0;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .item-content {
+    .tags {
+      margin: 0;
+
+      li .btn-info {
+        background-color: inherit;
+        color           : $gris2;
+        padding         : 0;
+        text-transform  : uppercase;
+        font-weight     : 400;
+      }
+    }
+
+    .page-header h2.item-title {
+      font-size: 0.9rem;
+
+      a {
+        color      : $gris2;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* Menu Intranet */
+.home-intranet .container-sidebar-left::before {
+  content: url(../images/logo-intranet.png);
+  margin : 0 auto;
+  padding: $garrahan-grid-gutter;
+}
+
+.container-sidebar-left {
+  background-color: $violeta;
+
+  .logo .custom {
+    text-align: center;
+  }
+
+  h5 {
+    text-align    : center;
+    text-transform: uppercase;
+  }
+
+  ul.mod-menu li a {
+    color         : #fff;
+    text-transform: uppercase;
+  }
+}
+
+.container-sidebar-left ul.mod-menu li ul li a {
+  text-transform: capitalize;
+
+  &::before {
+    content      : '>';
+    padding-right: 1.5em;
+  }
+}
+
+.sidebar-left ul.mod-menu.metismenu li {
+  padding        : 1em 2em 1em 1em;
+  justify-content: space-between;
+
+  span.image-title {
+    position    : relative;
+    top         : 2px;
+    padding-left: 15px;
+  }
+
+  button:hover {
+    text-decoration: none;
+  }
+
+  .mm-toggler {
+    outline: none;
+
+    &:after {
+      content   : '+';
+      color     : #fff;
+      text-align: right;
+      width     : auto;
+      height    : auto;
+      border    : none;
+    }
+  }
+
+  .mm-collapse {
+    background-color: inherit;
+  }
+}
+
+/* módulo Jevents */
+.main-bottom table.mod_events_latest_table tbody {
+  display: flex;
+  gap    : $garrahan-grid-gutter;
+  padding: $garrahan-grid-gutter 0;
+
+  tr {
+    box-shadow: 4px 4px 11px #999;
+
+    .wrapper {
+      padding: $garrahan-grid-gutter;
+    }
+  }
+}
+
+.home-intranet .mod_events_latest_callink {
+  margin    : 0 auto;
+  text-align: center;
+  padding   : $garrahan-grid-gutter * 2;
+
+  .btn.btn-outline-primary.white {
+    box-shadow: 4px 5px 10px #999;
+
+    a {
+      background     : none;
+      text-decoration: none;
+    }
+  }
+}
+
+table.mod_events_latest_table {
+  span.date {
+    display   : block;
+    background: $rosa;
+    padding   : $garrahan-grid-gutter;
+    color     : #fff;
+    text-align: center;
+  }
+
+  span.title a {
+    color          : $rosa;
+    font-weight    : bold;
+    line-height    : normal;
+    text-decoration: none;
+    font-size      : 1.3rem;
+  }
+}
+
+// custom layout latest events
+.d-grid.events {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap                  : $garrahan-grid-gutter;
+  padding-top          : $garrahan-grid-gutter;
+
+  .event {
+    box-shadow: 4px 4px 11px #999;
+
+    span.date {
+      display       : block;
+      background    : $rosa;
+      padding       : $garrahan-grid-gutter;
+      color         : #fff;
+      text-align    : center;
+      text-transform: uppercase;
+
+      .startday {
+        font-size: 2rem;
+      }
+    }
+
+    .wrapper {
+      padding: $garrahan-grid-gutter;
+
+      span.title a {
+        color          : $rosa;
+        font-weight    : bold;
+        line-height    : normal;
+        text-decoration: none;
+        font-size      : 1.3rem;
+        text-transform : none;
+
+        &::after {
+          content: inherit;
+        }
+      }
+
+      a.ev_link_row {
+        text-decoration: none;
+        color          : $rosa;
+        text-transform : uppercase;
+
+        &::after {
+          content     : url(../images/angle-right.png);
+          padding-left: $garrahan-grid-gutter;
+          position    : relative;
+          top         : 3px;
+        }
+      }
+    }
+  }
+
+  .mod_events_latest_callink .btn.btn-outline-primary.white a::after {
+    content     : url(../images/angle-right-dark.png);
+    padding-left: $garrahan-grid-gutter;
+    position    : relative;
+    top         : 3px;
+  }
+}

@@ -1,0 +1,33 @@
+.blog-item .item-content {
+  .volanta {
+    color: #fff;
+    padding-bottom: $garrahan-grid-gutter;
+    @include textShadow;
+  }
+  .page-header h2.item-title {
+    font-size: 1.3rem;
+    line-height: 1.5em;
+    font-weight: 600;
+    a {
+      text-decoration: none;
+      color: $violeta;
+    }
+  }
+}
+// Noticias / Prensa
+.view-category.layout-blog.noticias .site-grid {
+  background: $violeta4;
+  .blog-item {
+    background: #fff;
+    figure.item-image {
+      margin: 0;
+      text-align: center;
+    }
+    .item-content {
+      @include itemContent;
+    }
+  }
+}
+.home-intranet .com-content-category-blog__pagination {
+  margin: 0 auto;
+}
