@@ -1,36 +1,47 @@
 /* Menú principal */
 nav.navbar {
   place-content: flex-end;
-  align-self   : center;
+  align-self: center;
   background-color: $violeta;
 
-  .mod-menu>.metismenu-item:last-of-type {
+  .mod-menu > .metismenu-item:last-of-type {
     padding-right: 0;
   }
 
   .mod-menu .mm-toggler:after {
-    font-family : 'FontAwesome';
-    font-size   : 1rem;
-    font-weight : normal;
-    content     : '\f107';
-    color       : $rosa;
+    font-family: "FontAwesome";
+    font-size: 1rem;
+    font-weight: normal;
+    content: "\f107";
+    color: $rosa;
     padding-left: 5px;
-    border      : inherit;
-    width       : auto;
-    height      : auto;
+    border: inherit;
+    width: auto;
+    height: auto;
   }
 
-  ul.mod-menu>li>a,
+  ul.mod-menu > li.metismenu-item {
+    padding: 0.6em 0;
+  }
+
+  ul.mod-menu > li > a,
   ul.mod-menu li ul li a {
-    color      : #fff;
+    color: #fff;
     font-weight: 500;
+  }
+  @if $metismenu==true {
+    .metismenu.mod-menu {
+      .mm-collapse {
+        background: $gris2;
+      }
+    }
   }
 }
 
 /* Menu Intranet */
 .home-intranet .container-sidebar-left::before {
   content: url(../images/logo-intranet.png);
-  margin : 0 auto;
+  margin: 0 auto;
   padding: $garrahan-grid-gutter;
 }
 
@@ -42,12 +53,12 @@ nav.navbar {
   }
 
   h5 {
-    text-align    : center;
+    text-align: center;
     text-transform: uppercase;
   }
 
   ul.mod-menu li a {
-    color         : #fff;
+    color: #fff;
     text-transform: uppercase;
   }
 }
@@ -56,18 +67,18 @@ nav.navbar {
   text-transform: capitalize;
 
   &::before {
-    content      : '>';
+    content: ">";
     padding-right: 1.5em;
   }
 }
 
 .sidebar-left ul.mod-menu.metismenu li {
-  padding        : 1em 2em 1em 1em;
+  padding: 1em 2em 1em 1em;
   justify-content: space-between;
 
   span.image-title {
-    position    : relative;
-    top         : 2px;
+    position: relative;
+    top: 2px;
     padding-left: 15px;
   }
 
@@ -79,16 +90,32 @@ nav.navbar {
     outline: none;
 
     &:after {
-      content   : '+';
-      color     : #fff;
+      content: "+";
+      color: #fff;
       text-align: right;
-      width     : auto;
-      height    : auto;
-      border    : none;
+      width: auto;
+      height: auto;
+      border: none;
     }
   }
 
   .mm-collapse {
     background-color: inherit;
+  }
+}
+
+/* Fix mobile collapse problem */
+@include media-breakpoint-down(lg) {
+  .collapse:not(.show) {
+    display: none !important;
+  }
+}
+button.navbar-toggler {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  right: 7px;
+  &:focus {
+    box-shadow: none;
   }
 }

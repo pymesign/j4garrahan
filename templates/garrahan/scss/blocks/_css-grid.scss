@@ -40,30 +40,30 @@ body {
   .site-grid {
     display: grid;
     grid-template-areas:
-      '. banner banner banner banner .'
-      '. top-a top-a top-a top-a .'
-      '. titulo-top-b titulo-top-b titulo-top-b titulo-top-b .'
-      '. top-b top-b top-b top-b .'
-      '. titulo-comp titulo-comp titulo-comp titulo-comp .'
-      '. comp comp comp comp .'
-      '. side-r side-r side-r side-r .'
-      '. side-l side-l side-l side-l .'
-      '. bot-a bot-a bot-a bot-a .'
-      '. titulo-bot-b titulo-bot-b titulo-bot-b titulo-bot-b .'
-      '. bot-b bot-b bot-b bot-b .'
-      '. bot-c bot-c bot-c bot-c .'
-      '. bot-d bot-d bot-d bot-d .'
-      '. titulo-bot-e titulo-bot-e titulo-bot-e titulo-bot-e .'
-      '. bot-e bot-e bot-e bot-e .'
-      '. logos logos logos logos .';
+      ". banner banner banner banner ."
+      ". top-a top-a top-a top-a ."
+      ". titulo-top-b titulo-top-b titulo-top-b titulo-top-b ."
+      ". top-b top-b top-b top-b ."
+      ". titulo-comp titulo-comp titulo-comp titulo-comp ."
+      ". comp comp comp comp ."
+      ". side-r side-r side-r side-r ."
+      ". side-l side-l side-l side-l ."
+      ". bot-a bot-a bot-a bot-a ."
+      ". titulo-bot-b titulo-bot-b titulo-bot-b titulo-bot-b ."
+      ". bot-b bot-b bot-b bot-b ."
+      ". bot-c bot-c bot-c bot-c ."
+      ". bot-d bot-d bot-d bot-d ."
+      ". titulo-bot-e titulo-bot-e titulo-bot-e titulo-bot-e ."
+      ". bot-e bot-e bot-e bot-e ."
+      ". logos logos logos logos .";
     grid-template-columns:
       [full-start] minmax(0, 1fr) [main-start] repeat(4, minmax(0, 22.875rem))
       //aumentamos 19.875rem a 22.875
       [main-end] minmax(0, 1fr) [full-end];
     grid-gap: 0 $garrahan-grid-gutter;
 
-    > [class^='container-'],
-    > [class*=' container-'] {
+    > [class^="container-"],
+    > [class*=" container-"] {
       width: 100%;
       max-width: none;
       column-gap: $garrahan-grid-gutter;
@@ -75,37 +75,37 @@ body {
 
     @include media-breakpoint-up(lg) {
       grid-template-areas:
-        '. banner banner banner banner .'
-        '. top-a top-a top-a top-a .'
-        '. titulo-top-b titulo-top-b titulo-top-b titulo-top-b .'
-        '. top-b top-b top-b top-b .'
-        '. titulo-comp titulo-comp titulo-comp titulo-comp .'
-        '. side-l comp comp side-r .'
-        '. bot-a bot-a bot-a bot-a .'
-        '. titulo-bot-b titulo-bot-b titulo-bot-b titulo-bot-b .'
-        '. bot-b bot-b bot-b bot-b .'
-        '. bot-c bot-c bot-c bot-c .'
-        '. bot-d bot-d bot-d bot-d .'
-        '. titulo-bot-e titulo-bot-e titulo-bot-e titulo-bot-e .'
-        '. bot-e bot-e bot-e bot-e .'
-        '. logos logos logos logos .';
+        ". banner banner banner banner ."
+        ". top-a top-a top-a top-a ."
+        ". titulo-top-b titulo-top-b titulo-top-b titulo-top-b ."
+        ". top-b top-b top-b top-b ."
+        ". titulo-comp titulo-comp titulo-comp titulo-comp ."
+        ". side-l comp comp side-r ."
+        ". bot-a bot-a bot-a bot-a ."
+        ". titulo-bot-b titulo-bot-b titulo-bot-b titulo-bot-b ."
+        ". bot-b bot-b bot-b bot-b ."
+        ". bot-c bot-c bot-c bot-c ."
+        ". bot-d bot-d bot-d bot-d ."
+        ". titulo-bot-e titulo-bot-e titulo-bot-e titulo-bot-e ."
+        ". bot-e bot-e bot-e bot-e ."
+        ". logos logos logos logos .";
     }
   }
 
   .header-grid {
     display: grid;
     grid-template-areas:
-      'emptyl icons icons submenu submenu emptyr'
-      'logo logo search search search search'
-      'menu menu menu menu menu menu';
+      "emptyl icons icons icons submenu emptyr"
+      "logo logo contact contact search search"
+      "menu menu menu menu menu menu";
     grid-template-columns:
       [full-start] minmax(0, 1fr) [main-start] repeat(4, minmax(0, 23.575rem))
       //aumentamos 22.875 rem a 23.575
       [main-end] minmax(0, 1fr) [full-end];
     grid-gap: 0;
 
-    > [class^='container-'],
-    > [class*=' container-'] {
+    > [class^="container-"],
+    > [class*=" container-"] {
       width: 100%;
       max-width: none;
       column-gap: $garrahan-grid-gutter;
@@ -117,10 +117,11 @@ body {
 
     @include media-breakpoint-down(lg) {
       grid-template-areas:
-        '. menu menu menu menu .'
-        '. logo logo logo logo .'
-        '. icons icons search search .'
-        '. submenu submenu submenu submenu .';
+        ". menu menu menu menu ."
+        ". logo logo logo logo ."
+        ". icons icons icons icons ."
+        ". contact contact search search ."
+        ". submenu submenu submenu submenu .";
     }
   }
 
@@ -214,15 +215,25 @@ body {
 .submenu {
   grid-area: submenu;
 }
-.search {
+.whatsapp {
+  grid-area: contact;
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 4;
+  }
+}
+.container-search {
   grid-area: search;
-  grid-column-end: 6;
+  @include media-breakpoint-up(lg) {
+    grid-column-start: 5;
+    grid-column-end: 6;
+  }
 }
 .navbar-brand {
   grid-area: logo;
   grid-column-start: 2;
 }
-.navbar {
+.navbar,
+.dj-megamenu-wrapper {
   grid-area: menu;
   grid-column-end: full-end;
 }

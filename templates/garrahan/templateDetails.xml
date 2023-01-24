@@ -23,6 +23,7 @@
 		<folder>scss</folder>
 	</files>
 	<positions>
+		<position>contact</position>
 		<position>topbar</position>
 		<position>below-top</position>
 		<position>menu</position>

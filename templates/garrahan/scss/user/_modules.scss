@@ -1,6 +1,6 @@
 /* Títulos */
-.site-grid [class*=' container-titulo'],
-.site-grid [class^='container-titulo'] {
+.site-grid [class*=" container-titulo"],
+.site-grid [class^="container-titulo"] {
   height: auto;
   align-items: center;
 
@@ -16,7 +16,7 @@
   text-align: center;
   padding: 5em 0 4em 0;
 
-  >h3 {
+  > h3 {
     color: $violeta;
     font-weight: 600;
     font-size: 2rem;
@@ -31,7 +31,7 @@
 
 /* Cards */
 .card .card-body .card-header {
-  font-family: 'Encode Sans', sans-serif;
+  font-family: "Encode Sans", sans-serif;
 }
 
 /*** Sección Header ***/
@@ -57,13 +57,19 @@
 }
 
 /* Módulo search */
-.topbar .mod-finder__search {
+.mod-finder__search {
   justify-content: flex-end;
 
+  .awesomplete {
+    width: 100%;
+  }
+
   button.btn.btn-primary {
-    background: inherit;
-    border: none;
-    padding: 0;
+    background: $gris3;
+    border: 1px solid $gris3;
+    padding: 0px 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 
     span.icon-search.icon-white {
       color: $violeta;
@@ -72,11 +78,13 @@
 
   input {
     background-color: inherit;
-    border: 0;
-    text-align: center;
+    border: 1px solid $gris3;
+    text-align: left;
     color: $violeta;
     text-transform: uppercase;
     font-size: 0.8rem;
+    border-radius: 20px;
+    padding: 15px;
 
     &::placeholder {
       color: $violeta;
@@ -112,7 +120,7 @@
     .card-header {
       background: none;
       border-bottom: none;
-      font-family: 'Encode Sans', sans-serif;
+      font-family: "Encode Sans", sans-serif;
       font-weight: 500;
       padding: $garrahan-grid-gutter 0;
     }
@@ -435,7 +443,7 @@
         font-weight: normal;
       }
 
-      >div {
+      > div {
         gap: $garrahan-grid-gutter * 3;
       }
     }
@@ -493,7 +501,7 @@
     padding: 0;
   }
 
-  .card-body>div {
+  .card-body > div {
     text-align: center;
 
     p {
@@ -506,7 +514,7 @@
   }
 
   @include media-breakpoint-up(xl) {
-    .card:first-child>.card-body {
+    .card:first-child > .card-body {
       border-right: 2px solid $violeta;
     }
   }
@@ -534,7 +542,7 @@
     }
   }
 
-  .custom [class*='fab'] {
+  .custom [class*="fab"] {
     padding-top: $garrahan-grid-gutter;
     padding-right: $garrahan-grid-gutter;
   }
@@ -617,7 +625,7 @@ nav.mod-breadcrumbs__wrapper {
     background-color: inherit;
 
     li,
-    li>a {
+    li > a {
       color: #fff;
     }
   }
@@ -631,4 +639,30 @@ nav.mod-breadcrumbs__wrapper {
 
 .page-item.active .page-link {
   background-color: $violeta;
+}
+
+/*** Whatsapp ***/
+.whatsapp {
+  padding-right: $garrahan-grid-gutter;
+  img {
+    width: 60px;
+    height: 60px;
+    @include media-breakpoint-down(lg) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .text {
+    line-height: normal;
+    a {
+      color: $whatsapp;
+      text-decoration: none;
+      .number {
+        font-weight: 600;
+        @include media-breakpoint-down(lg) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
 }

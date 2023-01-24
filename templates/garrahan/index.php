@@ -18,7 +18,7 @@ use Joomla\CMS\Uri\Uri;
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 
 $app = Factory::getApplication();
-$wa  = $this->getWebAssetManager();
+$wa = $this->getWebAssetManager();
 
 // Browsers support SVG favicons
 $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
@@ -26,13 +26,13 @@ $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alte
 $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], true, 1), 'mask-icon', 'rel', ['color' => '#000']);
 
 // Detecting Active Variables
-$option   = $app->input->getCmd('option', '');
-$view     = $app->input->getCmd('view', '');
-$layout   = $app->input->getCmd('layout', '');
-$task     = $app->input->getCmd('task', '');
-$itemid   = $app->input->getCmd('Itemid', '');
+$option = $app->input->getCmd('option', '');
+$view = $app->input->getCmd('view', '');
+$layout = $app->input->getCmd('layout', '');
+$task = $app->input->getCmd('task', '');
+$itemid = $app->input->getCmd('Itemid', '');
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
-$menu     = $app->getMenu()->getActive();
+$menu = $app->getMenu()->getActive();
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
 // Template path
@@ -40,12 +40,12 @@ $templatePath = 'templates/' . $this->template;
 
 // Color Theme
 $paramsColorName = $this->params->get('colorName', 'colors_standard');
-$assetColorName  = 'theme.' . $paramsColorName;
+$assetColorName = 'theme.' . $paramsColorName;
 $wa->registerAndUseStyle($assetColorName, $templatePath . '/css/global/' . $paramsColorName . '.css');
 
 // Use a font scheme if set in the template style options
 $paramsFontScheme = $this->params->get('useFontScheme', false);
-$fontStyles       = '';
+$fontStyles = '';
 
 if ($paramsFontScheme) {
 	if (stripos($paramsFontScheme, 'https://') === 0) {
@@ -119,74 +119,75 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 <head>
 	<jdoc:include type="metas" />
 	<jdoc:include type="styles" />
-	<jdoc:include type="scripts" />	
+	<jdoc:include type="scripts" />
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/4f120f5ae8.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="site <?php echo $option
-						. ' ' . $wrapper
-						. ' view-' . $view
-						. ($layout ? ' layout-' . $layout : ' no-layout')
-						. ($task ? ' task-' . $task : ' no-task')
-						. ($itemid ? ' itemid-' . $itemid : '')
-						. ($pageclass ? ' ' . $pageclass : '')
-						. $hasClass
-						. ($this->direction == 'rtl' ? ' rtl' : '');
-					?>">
+	. ' ' . $wrapper
+	. ' view-' . $view
+	. ($layout ? ' layout-' . $layout : ' no-layout')
+	. ($task ? ' task-' . $task : ' no-task')
+	. ($itemid ? ' itemid-' . $itemid : '')
+	. ($pageclass ? ' ' . $pageclass : '')
+	. $hasClass
+	. ($this->direction == 'rtl' ? ' rtl' : '');
+?>">
 	<?php
 	//provisorio hasta que salga el advanced module manager compatible con j4
 	/*if (
-		!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php')
+	!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php')
 	) {
-		echo 'homepage html';
+	echo 'homepage html';
 	} else {
-		echo 'non-homepage html';
+	echo 'non-homepage html';
 	}*/
 	?>
 	<header class="header-grid container-header full-width<?php echo $stickyHeader ? ' ' . $stickyHeader : ''; ?>">
 
-		<?php if ($this->countModules('topbar')) : ?>
-
-
+		<?php if ($this->countModules('topbar')): ?>
 			<jdoc:include type="modules" name="topbar" style="noCard" />
-
-
-
 		<?php endif; ?>
 
-		<?php if ($this->countModules('below-top')) : ?>
+		<?php if ($this->countModules('below-top')): ?>
 			<div class="grid-child container-below-top">
 				<jdoc:include type="modules" name="below-top" style="none" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->params->get('brand', 1)) : ?>
+		<?php if ($this->params->get('brand', 1)): ?>
 
-			<?php if ($this->countModules('logo')) : ?>
+			<?php if ($this->countModules('logo')): ?>
 				<div class="navbar-brand">
 					<a class="brand-logo" href="<?php echo $this->baseurl; ?>/">
 						<?php //echo $logo; 
-						?>
+								?>
 						<jdoc:include type="modules" name="logo" style="raw" />
 					</a>
-					<?php if ($this->params->get('siteDescription')) : ?>
-						<div class="site-description"><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
+					<?php if ($this->params->get('siteDescription')): ?>
+						<div class="site-description">
+							<?php echo htmlspecialchars($this->params->get('siteDescription')); ?>
+						</div>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
-			<?php if ($this->countModules('menu', true) || $this->countModules('search', true)) : ?>
 
-				<?php if ($this->countModules('menu', true)) : ?>
-					<jdoc:include type="modules" name="menu" style="none" />
-				<?php endif; ?>
-				<?php if ($this->countModules('search', true)) : ?>
-					<div class="container-search">
-						<jdoc:include type="modules" name="search" style="none" />
-					</div>
-				<?php endif; ?>
-
+			<?php if ($this->countModules('menu', true)): ?>
+				<jdoc:include type="modules" name="menu" style="none" />
 			<?php endif; ?>
+
+			<?php if ($this->countModules('contact', true)): ?>
+				<jdoc:include type="modules" name="contact" style="noCard" />
+			<?php endif; ?>
+
+			<?php if ($this->countModules('search', true)): ?>
+				<div class="grid-child container-search d-flex align-items-center justify-content-end">
+					<jdoc:include type="modules" name="search" style="none" />
+				</div>
+			<?php endif; ?>
+
+
 
 		<?php endif; ?>
 
@@ -194,37 +195,37 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 	</header>
 
 	<div class="site-grid">
-		<?php if ($this->countModules('banner', true)) : ?>
+		<?php if ($this->countModules('banner', true)): ?>
 			<div class="container-banner full-width">
 				<jdoc:include type="modules" name="banner" style="none" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('top-a', true)) : ?>
+		<?php if ($this->countModules('top-a', true)): ?>
 			<div class="grid-child container-top-a">
 				<jdoc:include type="modules" name="top-a" style="outerbgr" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('titulo-top-b', true)) : ?>
+		<?php if ($this->countModules('titulo-top-b', true)): ?>
 			<div class="grid-child container-titulo-top-b">
 				<jdoc:include type="modules" name="titulo-top-b" style="card" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('top-b', true)) : ?>
+		<?php if ($this->countModules('top-b', true)): ?>
 			<div class="grid-child container-top-b pb-5">
 				<jdoc:include type="modules" name="top-b" style="card" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('sidebar-left', true)) : ?>
+		<?php if ($this->countModules('sidebar-left', true)): ?>
 			<div class="grid-child container-sidebar-left">
 				<jdoc:include type="modules" name="sidebar-left" style="card" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('titulo-comp', true)) : ?>
+		<?php if ($this->countModules('titulo-comp', true)): ?>
 			<div class="full-width titulo-comp">
 				<div class="grid-child container-titulo-comp">
 					<jdoc:include type="modules" name="titulo-comp" style="card" />
@@ -234,7 +235,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 
 		<?php if (
 			!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php')
-		) : ?>
+		): ?>
 			<div class="full-width component">
 			<?php endif; ?>
 			<div class="grid-child container-component">
@@ -248,17 +249,17 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 			</div>
 			<?php if (
 				!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php')
-			) : ?>
+			): ?>
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('sidebar-right', true)) : ?>
+		<?php if ($this->countModules('sidebar-right', true)): ?>
 			<div class="grid-child container-sidebar-right">
 				<jdoc:include type="modules" name="sidebar-right" style="card" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('bottom-a', true)) : ?>
+		<?php if ($this->countModules('bottom-a', true)): ?>
 			<div class="full-width recursos">
 				<div class="grid-child container-bottom-a">
 					<jdoc:include type="modules" name="bottom-a" style="outerbgr" />
@@ -267,7 +268,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 		<?php endif; ?>
 
 		<!-- Sección Comunidad Garrahan -->
-		<?php if ($this->countModules('titulo-bottom-b', true)) : ?>
+		<?php if ($this->countModules('titulo-bottom-b', true)): ?>
 			<div class="full-width comunidad">
 				<div class="grid-child container-titulo-bottom-b">
 					<jdoc:include type="modules" name="titulo-bottom-b" style="card" />
@@ -275,7 +276,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('bottom-b', true)) : ?>
+		<?php if ($this->countModules('bottom-b', true)): ?>
 			<div class="full-width comunidad">
 				<div class="grid-child container-bottom-b">
 					<jdoc:include type="modules" name="bottom-b" style="card" />
@@ -283,7 +284,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('bottom-c', true)) : ?>
+		<?php if ($this->countModules('bottom-c', true)): ?>
 			<div class="full-width comunidad pb-5">
 				<div class="grid-child container-bottom-c">
 					<jdoc:include type="modules" name="bottom-c" style="outerbgr" />
@@ -292,7 +293,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 		<?php endif; ?>
 
 		<!-- Sección contadores -->
-		<?php if ($this->countModules('bottom-d', true)) : ?>
+		<?php if ($this->countModules('bottom-d', true)): ?>
 			<div class="full-width contadores d-flex align-items-center pb-5">
 				<div class="grid-child container-bottom-d">
 					<jdoc:include type="modules" name="bottom-d" style="card" />
@@ -301,19 +302,19 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 		<?php endif; ?>
 
 		<!-- Sección campus virtual -->
-		<?php if ($this->countModules('titulo-bottom-e', true)) : ?>
+		<?php if ($this->countModules('titulo-bottom-e', true)): ?>
 			<div class="grid-child container-titulo-bottom-e">
 				<jdoc:include type="modules" name="titulo-bottom-e" style="card" />
 			</div>
 		<?php endif; ?>
-		<?php if ($this->countModules('bottom-e', true)) : ?>
+		<?php if ($this->countModules('bottom-e', true)): ?>
 			<div class="grid-child container-bottom-e">
 				<jdoc:include type="modules" name="bottom-e" style="card" />
 			</div>
 		<?php endif; ?>
 
 		<!-- Sección logos -->
-		<?php if ($this->countModules('logos', true)) : ?>
+		<?php if ($this->countModules('logos', true)): ?>
 			<div class="full-width logos mt-5">
 				<div class="grid-child container-logos">
 					<jdoc:include type="modules" name="logos" style="card" />
@@ -322,7 +323,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 		<?php endif; ?>
 	</div>
 
-	<?php if ($this->countModules('footer', true)) : ?>
+	<?php if ($this->countModules('footer', true)): ?>
 		<footer class="container-footer footer full-width">
 			<div class="grid-child align-items-start">
 				<jdoc:include type="modules" name="footer" style="noCard" />
@@ -330,7 +331,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 		</footer>
 	<?php endif; ?>
 
-	<?php if ($this->params->get('backTop') == 1) : ?>
+	<?php if ($this->params->get('backTop') == 1): ?>
 		<a href="#top" id="back-top" class="back-to-top-link" aria-label="<?php echo Text::_('TPL_GARRAHAN_BACKTOTOP'); ?>">
 			<span class="icon-arrow-up icon-fw" aria-hidden="true"></span>
 		</a>

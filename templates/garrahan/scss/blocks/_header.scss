@@ -17,7 +17,7 @@
 
   nav {
     padding: 0;
-    margin-top: $garrahan-grid-gutter / 2;
+    /*margin-top: $garrahan-grid-gutter / 2;*/
   }
 
   .site-description {
@@ -34,7 +34,7 @@
     color: $white;
     padding: $garrahan-grid-gutter 0;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       margin-right: 0;
       margin-left: auto;
     }
@@ -119,7 +119,7 @@
           display: block;
           height: 2px;
           margin: auto;
-          content: '';
+          content: "";
           background: transparent;
           opacity: 0.2;
           transition: all 0.2s ease, background-color 0.2s ease;
@@ -166,7 +166,7 @@
           display: block;
           height: 2px;
           margin: auto;
-          content: '';
+          content: "";
           background: transparent;
           opacity: 0.2;
           transition: all 0.2s ease, background-color 0.2s ease;
@@ -187,7 +187,7 @@
         right: 0;
         left: 0.5em;
 
-        [dir='rtl'] & {
+        [dir="rtl"] & {
           right: 0.5em;
           left: 0;
         }
@@ -218,10 +218,6 @@
     .fas {
       font-size: 1.5rem;
     }
-  }
-
-  .container-search {
-    margin-top: $garrahan-grid-gutter / 2;
   }
 
   .mod-finder {
