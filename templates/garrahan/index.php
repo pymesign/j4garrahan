@@ -234,7 +234,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 		<?php endif; ?>
 
 		<?php if (
-			!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php')
+			!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php/')
 		): ?>
 			<div class="full-width component">
 			<?php endif; ?>
@@ -248,7 +248,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 				<jdoc:include type="modules" name="main-bottom" style="card" />
 			</div>
 			<?php if (
-				!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php')
+				!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php/')
 			): ?>
 			</div>
 		<?php endif; ?>
