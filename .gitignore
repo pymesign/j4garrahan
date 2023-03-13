@@ -3,7 +3,10 @@ api/
 cache/
 cli/
 components/
+images/
 includes/
+language/
+layouts/
 libraries/
 media/
 modules/

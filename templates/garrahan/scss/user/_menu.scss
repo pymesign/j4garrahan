@@ -13,7 +13,7 @@ nav.navbar {
     font-size: 1rem;
     font-weight: normal;
     content: "\f107";
-    color: $rosa;
+    color: #fff;
     padding-left: 5px;
     border: inherit;
     width: auto;
@@ -32,10 +32,14 @@ nav.navbar {
   @if $metismenu==true {
     .metismenu.mod-menu {
       .mm-collapse {
-        background: $gris2;
+        background: $gris1;
       }
     }
   }
+}
+
+.container-header .metismenu > li.level-1 > ul {
+  min-width: 14rem;
 }
 
 /* Menu Intranet */
@@ -59,7 +63,7 @@ nav.navbar {
 
   ul.mod-menu li a {
     color: #fff;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
   }
 }
 

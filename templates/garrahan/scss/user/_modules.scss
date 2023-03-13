@@ -256,9 +256,9 @@
 .container-titulo-bottom-b {
   grid-area: titulo-bot-b;
 
-  h3 {
+  /*h3 {
     padding-bottom: 0;
-  }
+  }*/
 
   .mod-custom.custom {
     padding: 0 $garrahan-grid-gutter;
@@ -456,9 +456,9 @@
 .container-titulo-bottom-e {
   grid-area: titulo-bot-e;
 
-  h3 {
+  /*h3 {
     padding-bottom: 0;
-  }
+  }*/
 }
 
 .container-bottom-e .bottom-e.card:first-child .card-body {
@@ -549,6 +549,7 @@
 
   .disclaimer {
     color: #49496b;
+    font-size: 0.8rem;
   }
 }
 
@@ -619,15 +620,15 @@
 
 /*** Breadcrumbs ***/
 nav.mod-breadcrumbs__wrapper {
-  background: $violeta;
+  //background: $violeta;
 
   ol.breadcrumb {
-    background-color: inherit;
+    background-color: #fff;
 
-    li,
+    /*li,
     li > a {
       color: #fff;
-    }
+    }*/
   }
 }
 
@@ -665,4 +666,13 @@ nav.mod-breadcrumbs__wrapper {
       }
     }
   }
+}
+
+// Add to any buttons
+.addtoany_container {
+  padding-bottom: $garrahan-grid-gutter;
+}
+
+div.fastsocialshare-align-right {
+  padding-top: $garrahan-grid-gutter;
 }

@@ -134,16 +134,6 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 	. $hasClass
 	. ($this->direction == 'rtl' ? ' rtl' : '');
 ?>">
-	<?php
-	//provisorio hasta que salga el advanced module manager compatible con j4
-	/*if (
-	!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php')
-	) {
-	echo 'homepage html';
-	} else {
-	echo 'non-homepage html';
-	}*/
-	?>
 	<header class="header-grid container-header full-width<?php echo $stickyHeader ? ' ' . $stickyHeader : ''; ?>">
 
 		<?php if ($this->countModules('topbar')): ?>
@@ -233,9 +223,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 			</div>
 		<?php endif; ?>
 
-		<?php if (
-			!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php/')
-		): ?>
+		<?php if ($view != "article"): ?>
 			<div class="full-width component">
 			<?php endif; ?>
 			<div class="grid-child container-component">
@@ -247,9 +235,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 				</main>
 				<jdoc:include type="modules" name="main-bottom" style="card" />
 			</div>
-			<?php if (
-				!strstr($_SERVER['REQUEST_URI'], 'view=article') && !strstr($_SERVER['REQUEST_URI'], 'index.php/')
-			): ?>
+			<?php if ($view != 'article'): ?>
 			</div>
 		<?php endif; ?>
 
@@ -339,6 +325,32 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 
 	<jdoc:include type="modules" name="debug" style="none" />
 	<!--<script src="<?php echo $this->baseurl . '/templates/' . $this->template . '/js/purecounter_vanilla.js' ?>"></script>-->
+	<!--<script>
+		jQuery(document).ready(function () {
+			var item1 = jQuery(".nav-item");
+			item1.each(function (i) {
+				var link = jQuery(this).find(".nav-link").attr('href');
+
+				var elements = jQuery(link).each(function () {
+					var row = jQuery(this).find(".timeslotrow").children().length > 0;
+
+					if (!row) {
+						//console.log(item1[i]);
+						jQuery(item1[i]).addClass("hidden");
+						jQuery(item1[i]).find(".nav-link").removeClass("active");
+						jQuery(link).removeClass("active");
+
+					}
+					if (row) {
+						jQuery(link).addClass("active");
+					}
+				})
+
+			}
+			)
+			//$("li.item-ii").find(item1).css("background-color", "red");
+		});
+	</script>-->
 </body>
 
 </html>

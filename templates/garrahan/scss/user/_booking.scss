@@ -1,22 +1,25 @@
 // Estilos para el componente Osservicesbooking
 .makebooking {
-    padding: 2em;
+  padding: 2em;
 }
 
 .loginform input.input-large,
 .loginform input.input-medium {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 .loginform .btn-success {
-    margin: 1em;
+  margin: 1em;
 }
 
 h2.orderdetailsheading {
-    padding-top: 4rem;
+  padding-top: 4rem;
 }
 
 div#ordercancelConfirm,
 div#ordercancelComplete {
-    padding: 5rem 0;
+  padding: 5rem 0;
+}
+.com_osservicesbooking #listOrderServices .orderdetailstabletd {
+  font-size: 14px;
 }

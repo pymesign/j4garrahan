@@ -1,6 +1,9 @@
+// con el breadcrumbs necesitamos eliminar el margen
+.grid-child.container-component main {
+  margin-top: 0;
+}
 // articulos item-page
 .com-content-article.item-page:not(.servicio, .noticias) {
-
   h2,
   h3,
   h4,
@@ -16,11 +19,11 @@
     h1 {
       color: #fff;
       padding: $garrahan-grid-gutter 0;
-      text-align: right;
+      text-align: left;
     }
   }
 
-  .volanta+.page-header {
+  .volanta + .page-header {
     margin-top: $garrahan-grid-gutter;
   }
 
@@ -40,9 +43,9 @@
 
   @include media-breakpoint-up(lg) {
     .com-content-article__body {
-      /*width: 50%;*/
+      width: 66%;
       margin: 0 auto;
-      padding: ($garrahan-grid-gutter * 2) ($garrahan-grid-gutter * 4) 0 ($garrahan-grid-gutter * 4);
+      padding: 0;
     }
   }
 }
@@ -114,7 +117,7 @@
         padding: 0;
 
         .item-text {
-          padding: $garrahan-grid-gutter *4;
+          padding: $garrahan-grid-gutter * 4;
         }
       }
     }
@@ -131,28 +134,26 @@
 
     li {
       border-bottom: 1px solid $gris2;
-      padding: $garrahan-grid-gutter (
-        $garrahan-grid-gutter * 3
-      );
+      padding: $garrahan-grid-gutter ($garrahan-grid-gutter * 3);
 
-    &:hover,
-    &.active {
-      background: $gris2;
-      transition-timing-function: ease;
-      transition-duration: 0.35s;
-      transition-property: color, background-color, height, visibility;
+      &:hover,
+      &.active {
+        background: $violeta;
+        transition-timing-function: ease;
+        transition-duration: 0.35s;
+        transition-property: color, background-color, height, visibility;
+
+        a {
+          color: $blanco;
+        }
+      }
 
       a {
-        color: $blanco;
+        font-weight: bold;
+        color: $violeta;
       }
     }
-
-    a {
-      font-weight: bold;
-      color: $violeta;
-    }
   }
-}
 }
 
 // articulo presentación "base"
@@ -166,7 +167,7 @@
     .page-header {
       background-repeat: no-repeat;
       background-position: right center;
-      background-size: 30%;
+      background-size: contain;
 
       .wrapper {
         width: 80%;
@@ -175,7 +176,7 @@
         background: $violeta;
         border-right: 50px solid $rosa;
         transform: skew(-15deg);
-        height: 200px;
+        height: 300px;
         transform: skew(-15deg);
         -webkit-transform: skew(-15deg);
         -moz-transform: skew(-15deg);
@@ -212,7 +213,7 @@
       }
 
       .item-text {
-        padding: $garrahan-grid-gutter *4;
+        padding: $garrahan-grid-gutter * 4;
       }
     }
   }
@@ -278,7 +279,7 @@
   }
 
   .row.turnos {
-    .span12 p>strong {
+    .span12 p > strong {
       font-size: 18px;
     }
 
@@ -382,3 +383,38 @@
 }
 
 /* fin turnos */
+
+/* Tablas */
+table {
+  width: 100%;
+  border: 1px solid;
+  thead {
+    background-color: $gris2;
+  }
+  tbody {
+    tr:nth-child(even) {
+      background-color: $gris3;
+    }
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+  }
+  th,
+  td {
+    padding: 7px;
+  }
+}
+
+/* Aside card */
+aside.card {
+  margin: 3rem 0;
+  font-size: larger;
+  .card-header {
+    font-weight: bold;
+    padding: 1em;
+  }
+  .card-body {
+    background: $rosa;
+    color: #fff;
+  }
+}
