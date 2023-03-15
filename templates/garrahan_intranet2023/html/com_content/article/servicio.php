@@ -33,18 +33,26 @@ $assocParam = ( Associations::isEnabled() && $params->get( 'show_associations' )
 $currentDate = Factory::getDate()->format( 'Y-m-d H:i:s' );
 $isNotPublishedYet = $this->item->publish_up > $currentDate;
 $isExpired = ! is_null( $this->item->publish_down ) && $this->item->publish_down < $currentDate;
-?>
-<?php
+
 // GET CUSTOM FIELDS
 $myCustomFields = array();
 foreach ( $this->item->jcfields as $field ) {
 	$myCustomFields[ $field->name ] = $field->value;
 }
 
+// renderizamos un modulo dentro del articulo para colocar los menus internos
+jimport( 'joomla.application.module.helper' );
+$modules = JModuleHelper::getModules( 'inset' );
+$document = &JFactory::getDocument();
+$renderer = $document->loadRenderer( 'modules' );
+$position = 'inset';
+$options = array( 'style' => 'raw' );
+
 // traemos las imágenes
 $images = json_decode( $this->item->images );
+
 ?>
-<div class="com-content-article item-page base <?php echo $this->pageclass_sfx; ?> mb-5" itemscope
+<div class="com-content-article item-page <?php echo $this->pageclass_sfx; ?>" itemscope
 	itemtype="https://schema.org/Article">
 	<meta itemprop="inLanguage"
 		content="<?php echo ( $this->item->language === '*' ) ? Factory::getApplication()->get( 'language' ) : $this->item->language; ?>">
@@ -72,13 +80,13 @@ $images = json_decode( $this->item->images );
 	<?php if ( $params->get( 'show_title' ) ) : ?>
 		<div class="page-header"
 			style="background-image: url(<?php echo $images->image_fulltext ? $images->image_fulltext : 'images/frente_hospital_1.jpg'; ?>);">
-			<div class="wrapper py-5">
+			<div class="wrapper">
 				<div class="text container d-flex flex-column justify-content-center">
 					<<?php echo $htag; ?> itemprop="headline">
 						<?php echo $this->escape( $this->item->title ); ?>
 					</<?php echo $htag; ?>>
 					<?php if ( isset( $myCustomFields['copete'] ) and ! empty( $myCustomFields['copete'] ) ) : ?>
-						<div class="copete fs-5 w-75">
+						<div class="copete mb-5 fs-5 w-75">
 							<?php echo $myCustomFields['copete']; ?>
 						</div>
 					<?php endif; ?>
@@ -101,12 +109,6 @@ $images = json_decode( $this->item->images );
 			</div>
 		</div>
 	<?php endif; ?>
-
-	<?php //if (isset($myCustomFields['copete']) and !empty($myCustomFields['copete'])) : ?>
-	<!--<div class="copete mb-5 fs-5">
-			<?php echo $myCustomFields['copete']; ?>
-		</div>-->
-	<?php //endif; ?>
 
 	<?php if ( $canEdit ) : ?>
 		<?php echo LayoutHelper::render( 'joomla.content.icons', array( 'params' => $params, 'item' => $this->item ) ); ?>
@@ -145,7 +147,17 @@ $images = json_decode( $this->item->images );
 			echo $this->item->toc;
 		endif; ?>
 		<div itemprop="articleBody" class="com-content-article__body">
-			<?php echo $this->item->text; ?>
+
+			<?php if ( $modules ) :
+				echo '<div class="d-flex">';
+				echo '<div class="container-sidebar-left">' . $renderer->render( $position, $options, null ) . '</div>';
+			endif; ?>
+			<div class="item-text">
+				<?php echo $this->item->text; ?>
+			</div>
+			<?php if ( $modules ) :
+				echo '</div>';
+			endif; ?>
 		</div>
 
 		<?php if ( $info == 1 || $info == 2 ) : ?>

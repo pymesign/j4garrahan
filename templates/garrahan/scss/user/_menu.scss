@@ -42,6 +42,27 @@ nav.navbar {
   min-width: 14rem;
 }
 
+/* Menu Sidebar-left */
+.sidebar-left nav.navbar {
+  background: $gris3;
+  padding: 0;
+  .collapse.navbar-collapse {
+    padding: 0;
+    ul li {
+      padding: 1em 3em;
+      a {
+        color: $violeta;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      &:hover a,
+      &.current.active > a {
+        color: #fff;
+      }
+    }
+  }
+}
+
 /* Menu Intranet */
 .home-intranet .container-sidebar-left::before {
   content: url(../images/logo-intranet.png);
