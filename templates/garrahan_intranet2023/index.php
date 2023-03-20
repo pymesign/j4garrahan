@@ -221,9 +221,9 @@ $wa->getAsset( 'style', 'fontawesome' )->setAttribute( 'rel', 'lazy-stylesheet' 
 		<?php endif; ?>
 
 		<?php if ( $view != "article" ) : ?>
-			<div class="full-width component">
-			<?php endif; ?>
 			<div class="grid-child container-component">
+			<?php endif; ?>
+			<div class="component">
 				<jdoc:include type="modules" name="breadcrumbs" style="none" />
 				<jdoc:include type="modules" name="main-top" style="card" />
 				<jdoc:include type="message" />
