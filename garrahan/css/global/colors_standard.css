@@ -1,0 +1,5 @@
+:root {
+  --garrahan-color-primary: hsl(220deg, 67%, 20%);
+  --garrahan-color-link: hsl(220deg, 67%, 40%);
+  --garrahan-color-hover: hsl(242deg, 30%, 36%);
+}

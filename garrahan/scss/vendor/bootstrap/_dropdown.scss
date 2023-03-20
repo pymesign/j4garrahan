@@ -1,0 +1,15 @@
+// Dropdown
+
+.dropdown-menu {
+  padding: 0.2rem 0;
+  margin-top: 0.5rem;
+  background-color: $white;
+  border-color: $garrahan-border-color;
+}
+
+.dropdown-menu-end {
+  &::after {
+    right: 0.9rem;
+    left: auto;
+  }
+}

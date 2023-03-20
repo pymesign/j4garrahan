@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" client="site">
   <name>garrahan_intranet2023</name>
-  <version>1.0</version>
+  <version>2.0</version>
   <creationDate>Marzo 2023</creationDate>
   <author>Diego</author>
   <authorEmail>info@pymesign.com</authorEmail>
@@ -49,7 +49,7 @@
         <field name="useFontScheme" type="groupedlist" label="TPL_GARRAHAN_FONT_LABEL" default="0">
           <option value="0">JNONE</option>
           <group label="TPL_GARRAHAN_FONT_GROUP_LOCAL">
-            <option value="templates/garrahan/css/global/fonts-local_roboto.css">Roboto (local)</option>
+            <option value="media/templates/site/garrahan/css/global/fonts-local_roboto.css">Roboto (local)</option>
           </group>
           <group label="TPL_GARRAHAN_FONT_GROUP_WEB">
             <option value="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;300;400;700&amp;display=swap">Fira Sans (web)</option>
@@ -58,7 +58,7 @@
           </group>
         </field>
         <field name="noteFontScheme" type="note" description="TPL_GARRAHAN_FONT_NOTE_TEXT" class="alert alert-warning"/>
-        <field name="colorName" type="list" default="colors_standard" label="TPL_GARRAHAN_COLOR_NAME_LABEL">
+        <field name="colorName" type="filelist" label="TPL_GARRAHAN_COLOR_NAME_LABEL" default="colors_standard" fileFilter="^custom.+[^min]\.css$" exclude="^colors.+" stripext="true" hide_none="true" hide_default="true" directory="media/templates/site/garrahan/css/global/" validate="options">
           <option value="colors_standard">TPL_GARRAHAN_COLOR_NAME_STANDARD</option>
           <option value="colors_alternative">TPL_GARRAHAN_COLOR_NAME_ALTERNATIVE</option>
         </field>
